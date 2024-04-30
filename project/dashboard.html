@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('image 1.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 80%;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .dashboard-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            justify-items: center;
+            align-items: center;
+        }
+
+        .option {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .option:hover {
+            background-color: #0056b3;
+        }
+
+        .option img {
+            width: 80px; /* Adjust the image size as needed */
+            margin-bottom: 10px;
+        }
+
+        .option span {
+            font-size: 16px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><b>Welcome to the Dashboard</b></h1>
+        <div class="dashboard-options">
+            <a href="users.php" class="option">
+                <img src="view.jpg" alt="Profile Icon">
+                <span>View Profile</span>
+            </a>
+            <a href="users.php" class="option">
+                <img src="edit.svg" alt="Edit Icon">
+                <span>Edit Profile</span>
+            </a>
+            <a href="Recruitment Workflow.html" class="option">
+                <img src="job search.jpg" alt="Jobs Icon">
+                <span>View Jobs</span>
+            </a>
+            <a href="JobListings.html" class="option">
+                <img src="job.jpg" alt="Apply Icon">
+                <span>Apply for Jobs</span>
+            </a>
+            <a href="index.html" class="option">
+                <img src="log out.png" alt="Logout Icon">
+                <span>Logout</span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

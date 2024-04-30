@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #007bff;
+            transition: background-color 0.3s;
+            display: block;
+        }
+
+        nav ul li a:hover {
+            background-color: #0056b3;
+        }
+
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+
+        .card h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .card p {
+            color: #666;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Admin Dashboard</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="employeee.html" id="employee-link">Employee</a></li>
+            <li><a href="job search.jpg" id="job-listings-link">Job Listings</a></li>
+            <li><a href="documentation.html" id="documentation-link">Documentation</a></li>
+            <li><a href="performance .html" id="performance-link">Performance</a></li>
+            <li><a href="reporting.html" id="reporting-link">Reporting</a></li>
+            <li><a href="testing.html" id="testing-link">Testing</a></li>
+            <li><a href="Recruitment Workflow.html" id="recruitment-workflow-link">Recruitment Workflow</a></li>
+            <li><a href="users.php" id="user-link">User</a></li>
+        </ul>
+    </nav>
+    <main id="main-content">
+        <!-- Content will be loaded dynamically here -->
+    </main>
+
+    <script>
+        // DOM elements
+        const employeeLink = document.getElementById('employee-link');
+        const jobListingsLink = document.getElementById('job-listings-link');
+        const documentationLink = document.getElementById('documentation-link');
+        const performanceLink = document.getElementById('performance-link');
+        const reportingLink = document.getElementById('reporting-link');
+        const testingLink = document.getElementById('testing-link');
+        const recruitmentWorkflowLink = document.getElementById('recruitment-workflow-link');
+        const userLink = document.getElementById('user-link');
+        const mainContent = document.getElementById('main-content');
+
+        // Add event listeners
+        employeeLink.addEventListener('click', loadEmployeeForm);
+        jobListingsLink.addEventListener('click', loadJobListingsForm);
+        documentationLink.addEventListener('click', loadDocumentationForm);
+        performanceLink.addEventListener('click', loadPerformanceForm);
+        reportingLink.addEventListener('click', loadReportingForm);
+        testingLink.addEventListener('click', loadTestingForm);
+        recruitmentWorkflowLink.addEventListener('click', loadRecruitmentWorkflowForm);
+        userLink.addEventListener('click', loadUserForm);
+
+        // Initial load
+        loadEmployeeForm();
+
+        // Functions to load content
+        function loadEmployeeForm() {
+            mainContent.innerHTML = `
+                <div class="card">
+                    <h2>Employee Form</h2>
+                    <p>This is where you can manage employee details.</p>
+                </div>
+            `;
+        }
+
+        function loadJobListingsForm() {
+            mainContent.innerHTML = `
+                <div class="card">
+                    <h2>Job Listings Form</h2>
+                    <p>This is where you can manage job listings.</p>
+                </div>
+            `;
+        }
+
+        function loadDocumentationForm() {
+            mainContent.innerHTML = `
+                <div class="card">
+                    <h2>Documentation Form</h2>
+                    <p>This is where you can manage documentation.</p>
+                </div>
+            `;
+        }
+
+        function loadPerformanceForm() {
+            mainContent.innerHTML = `
+                <div class="card">
+                    <h2>Performance Form</h2>
+                    <p>This is where you can manage performance metrics.</p>
+                </div>
+            `;
+        }
+
+        function loadReportingForm() {
+            mainContent.innerHTML = `
+                <div class="card">
+                    <h2>Reporting Form</h2>
+                    <p>This is where you can generate reports.</p>
+                </div>
+            `;
+        }
+
+        function loadTestingForm() {
+            mainContent.innerHTML = `
+                <div class="card">
+                    <h2>Testing Form</h2>
+                    <p>This is where you can manage testing procedures.</p>
+                </div>
+            `;
+        }
+
+        function loadRecruitmentWorkflowForm() {
+            mainContent.innerHTML = `
+                <div class="card">
+                    <h2>Recruitment Workflow Form</h2>
+                    <p>This is where you can manage the recruitment process.</p>
+                </div>
+            `;
+        }
+
+        function loadUserForm() {
+            mainContent.innerHTML = `
+                <div class="card">
+                    <h2>User Form</h2>
+                    <p>This is where you can manage user accounts.</p>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>

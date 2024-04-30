@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recruitment Workflow</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color:gray;
+        }
+
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .job-posting, .candidate {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #fafafa;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Recruitment Workflow</h1>
+        <div id="jobPostings"></div>
+        <div id="candidates"></div>
+    </div>
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            fetchJobPostings();
+            fetchCandidates();
+        });
+
+        function fetchJobPostings() {
+            // Here you would make an API call to fetch job postings from your backend
+            // For demonstration purposes, let's create some mock data
+            const mockJobPostings = [
+                { id: 1, title: 'Software Engineer', department: 'Engineering', location: 'Remote', status: 'Open' },
+                { id: 2, title: 'Marketing Specialist', department: 'Marketing', location: 'New York', status: 'Open' },
+                { id: 3, title: 'HR Manager', department: 'Human Resources', location: 'Los Angeles', status: 'Closed' },
+                // Add more job postings as needed
+            ];
+
+            displayJobPostings(mockJobPostings);
+        }
+
+        function displayJobPostings(jobPostings) {
+            const jobPostingsContainer = document.getElementById('jobPostings');
+
+            // Clear previous job postings (if any)
+            jobPostingsContainer.innerHTML = '';
+
+            // Display each job posting
+            jobPostings.forEach(job => {
+                const postingElement = document.createElement('div');
+                postingElement.classList.add('job-posting');
+                postingElement.innerHTML = `
+                    <h3>${job.title}</h3>
+                    <p><strong>Department:</strong> ${job.department}</p>
+                    <p><strong>Location:</strong> ${job.location}</p>
+                    <p><strong>Status:</strong> ${job.status}</p>
+                `;
+                jobPostingsContainer.appendChild(postingElement);
+            });
+        }
+
+        function fetchCandidates() {
+            // Here you would make an API call to fetch candidates from your backend
+            // For demonstration purposes, let's create some mock data
+            const mockCandidates = [
+                { id: 1, name: 'John Doe', position: 'Software Engineer', status: 'In Progress' },
+                { id: 2, name: 'Jane Smith', position: 'Marketing Specialist', status: 'Submitted' },
+                { id: 3, name: 'Michael Johnson', position: 'HR Manager', status: 'Approved' },
+                // Add more candidates as needed
+            ];
+
+            displayCandidates(mockCandidates);
+        }
+
+        function displayCandidates(candidates) {
+            const candidatesContainer = document.getElementById('candidates');
+
+            // Clear previous candidates (if any)
+            candidatesContainer.innerHTML = '';
+
+            // Display each candidate
+            candidates.forEach(candidate => {
+                const candidateElement = document.createElement('div');
+                candidateElement.classList.add('candidate');
+                candidateElement.innerHTML = `
+                    <p><strong>Name:</strong> ${candidate.name}</p>
+                    <p><strong>Position:</strong> ${candidate.position}</p>
+                    <p><strong>Status:</strong> ${candidate.status}</p>
+                `;
+                candidatesContainer.appendChild(candidateElement);
+            });
+        }
+    </script>
+</body>
+</html>

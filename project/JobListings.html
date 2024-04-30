@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Listings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: gray;
+        }
+
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color:none;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .job-listing {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #fafafa;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="color:black;">Job Listings</h1>
+        <div id="jobListings"></div>
+    </div>
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            fetchJobListings();
+        });
+
+        function fetchJobListings() {
+            // Here you would make an API call to fetch job listings from your backend
+            // For demonstration purposes, let's create some mock data
+            const mockJobListings = [
+                { id: 1, title: 'Software Engineer', department: 'Engineering', location: 'Remote' },
+                { id: 2, title: 'Marketing Specialist', department: 'Marketing', location: 'New York' },
+                { id: 3, title: 'HR Manager', department: 'Human Resources', location: 'Los Angeles' },
+                // Add more job listings as needed
+            ];
+
+            displayJobListings(mockJobListings);
+        }
+
+        function displayJobListings(jobListings) {
+            const jobListingsContainer = document.getElementById('jobListings');
+
+            // Clear previous listings (if any)
+            jobListingsContainer.innerHTML = '';
+
+            // Display each job listing
+            jobListings.forEach(job => {
+                const listingElement = document.createElement('div');
+                listingElement.classList.add('job-listing');
+                listingElement.innerHTML = `
+                    <h3>${job.title}</h3>
+                    <p><strong>Department:</strong> ${job.department}</p>
+                    <p><strong>Location:</strong> ${job.location}</p>
+                    <button onclick="applyForJob(${job.id})">Apply</button>
+                `;
+                jobListingsContainer.appendChild(listingElement);
+            });
+        }
+
+        function applyForJob(jobId) {
+            // Here you would implement the logic to apply for a job
+            // For now, let's just display an alert
+            alert(`Applied for job with ID: ${jobId}`);
+        }
+    </script>
+</body>
+</html>

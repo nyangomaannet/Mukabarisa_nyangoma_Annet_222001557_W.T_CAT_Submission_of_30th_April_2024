@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporting and Analytics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Reporting and Analytics</h1>
+        <div id="report"></div>
+    </div>
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            generateReport();
+        });
+
+        function generateReport() {
+            // Here you would make an API call to fetch data for the report from your backend
+            // For demonstration purposes, let's create a mock report
+            const mockReport = {
+                totalEmployees: 100,
+                totalOpenPositions: 5,
+                totalApplications: 500,
+                averageRating: 4.2,
+                // Add more metrics as needed
+            };
+
+            displayReport(mockReport);
+        }
+
+        function displayReport(report) {
+            const reportContainer = document.getElementById('report');
+
+            // Clear previous report (if any)
+            reportContainer.innerHTML = '';
+
+            // Display the report metrics
+            reportContainer.innerHTML = `
+                <p><strong>Total Employees:</strong> ${report.totalEmployees}</p>
+                <p><strong>Total Open Positions:</strong> ${report.totalOpenPositions}</p>
+                <p><strong>Total Applications:</strong> ${report.totalApplications}</p>
+                <p><strong>Average Rating:</strong> ${report.averageRating}</p>
+                <!-- Add more metrics here -->
+            `;
+        }
+    </script>
+</body>
+</html>

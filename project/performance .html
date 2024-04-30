@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .performance-review {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #fafafa;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Performance Management</h1>
+        <div id="performanceReviews"></div>
+    </div>
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            fetchPerformanceReviews();
+        });
+
+        function fetchPerformanceReviews() {
+            // Here you would make an API call to fetch performance reviews from your backend
+            // For demonstration purposes, let's create some mock data
+            const mockPerformanceReviews = [
+                { id: 1, employee: 'John Doe', reviewer: 'Jane Smith', rating: 4, feedback: 'Excellent performance.' },
+                { id: 2, employee: 'Jane Smith', reviewer: 'Michael Johnson', rating: 3, feedback: 'Good progress, room for improvement.' },
+                { id: 3, employee: 'Michael Johnson', reviewer: 'John Doe', rating: 5, feedback: 'Outstanding work, exceeded expectations.' },
+                // Add more performance reviews as needed
+            ];
+
+            displayPerformanceReviews(mockPerformanceReviews);
+        }
+
+        function displayPerformanceReviews(reviews) {
+            const reviewsContainer = document.getElementById('performanceReviews');
+
+            // Clear previous performance reviews (if any)
+            reviewsContainer.innerHTML = '';
+
+            // Display each performance review
+            reviews.forEach(review => {
+                const reviewElement = document.createElement('div');
+                reviewElement.classList.add('performance-review');
+                reviewElement.innerHTML = `
+                    <p><strong>Employee:</strong> ${review.employee}</p>
+                    <p><strong>Reviewer:</strong> ${review.reviewer}</p>
+                    <p><strong>Rating:</strong> ${review.rating}</p>
+                    <p><strong>Feedback:</strong> ${review.feedback}</p>
+                `;
+                reviewsContainer.appendChild(reviewElement);
+            });
+        }
+    </script>
+</body>
+</html>
